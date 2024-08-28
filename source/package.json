@@ -1,0 +1,27 @@
+{
+    "dependencies": {
+        "cookies-next": "^4.2.1",
+        "next": "14.2.7",
+        "next-intl": "^3.18.0",
+        "next-themes": "^0.3.0",
+        "react": "^18",
+        "react-dom": "^18"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.7",
+        "typescript": "^5"
+    },
+    "name": "internationalization_theme",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "dev": "next dev",
+        "lint": "next lint",
+        "start": "next start"
+    },
+    "version": "1.0.0"
+}

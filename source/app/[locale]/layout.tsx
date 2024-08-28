@@ -1,0 +1,40 @@
+// Components ---------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
+const Theme = dynamic(() => import(">_/helpers/theme"), { ssr: false });
+import { NextIntlClientProvider } from "next-intl";
+// Dependencies -------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
+import { cookies } from "next/headers";
+import dynamic from "next/dynamic";
+import { getMessages, getTranslations } from "next-intl/server";
+// Types --------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
+import type TLayout from ">_/types/TLayout";
+import type TTheme from ">_/types/TTheme";
+// Validators ---------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
+import { isTheme } from ">_/validators/custom";
+// Meta ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
+export async function generateMetadata({ params }: TLayout) {
+    const { locale } = params || {};
+    const translate = await getTranslations({ locale, namespace: `00 - Metadata` });
+    return { title: translate(`title`), description: translate(`description`) };
+};
+// Root ------------------------------------------------------------------------------------------------------------------------------------------------------- [ LAYOUT COMPONENT ]
+const RootLayout = async ({ children, params }: TLayout): Promise<React.JSX.Element> => {
+    // Properties ---------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
+    const { locale } = params || {};
+    const cookie: string | undefined = cookies().get(`theme`)?.value;
+    const theme: TTheme = (isTheme(cookie)) ? cookie : `dark`;
+    const messages = await getMessages();
+    // JSX ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
+    return <html lang={ locale } style={ { colorScheme: theme } }>
+        <body className="">
+            <Theme attribute="class" defaultTheme={ theme }>
+                <NextIntlClientProvider messages={ messages }>
+                { /* Your navbar could go here */ }
+                { children }    
+                { /* Your footer could go here */ }
+                </NextIntlClientProvider>
+            </Theme>
+        </body>
+    </html>;
+};
+// Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
+export default RootLayout;
