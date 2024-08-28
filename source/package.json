@@ -15,7 +15,7 @@
         "eslint-config-next": "14.2.7",
         "typescript": "^5"
     },
-    "name": "internationalization_theme",
+    "name": "nextjs_template_base_1",
     "private": true,
     "scripts": {
         "build": "next build",
