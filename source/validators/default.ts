@@ -83,17 +83,4 @@ const isStringEmpty = (element: unknown): boolean => isString(element) && elemen
  */
 const isUndefined = (element: unknown): element is undefined => element === undefined;
 // Exports ------------------------------------------------------------------------------------------------------------------------------------------------------------- [ EXPORTS ]
-export {
-    isArray,
-    isArrayEmpty,
-    isBoolean,
-    isFormData,
-    isFunction,
-    isNull,
-    isNumber,
-    isObject,
-    isObjectEmpty,
-    isString,
-    isStringEmpty,
-    isUndefined
-};
+export { isArray, isArrayEmpty, isBoolean, isFormData, isFunction, isNull, isNumber, isObject, isObjectEmpty, isString, isStringEmpty, isUndefined };
