@@ -1,0 +1,41 @@
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* 01 - Container
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+.container {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 14px;
+    position: relative;
+    cursor: pointer;
+    border: var(--border-solid) var(--background-color-2);
+    border-radius: var(--radius-10);
+    background-color: var(--background-color-3);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.container:hover {
+    border-color: var(--color-accent-2);
+    background-color: var(--color-accent-1);
+}
+.container > input { display: none; }
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* 02 - Icon
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -2px;
+    pointer-events: none;
+    border: var(--border-solid) var(--background-color-3);
+    border-radius: var(--radius-10);
+    background-color: var(--background-color-2);
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+.container:hover > .icon { border-color: var(--color-accent-2); }
+.icon[data-position="right"] { transform: translateX(100%); }
+.icon[data-position="left"] { transform: translateX(0px); }
+.icon > i { font-size: 10px; }

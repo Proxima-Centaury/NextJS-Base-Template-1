@@ -1,10 +1,18 @@
 // Components ---------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
 const Theme = dynamic(() => import(">_/helpers/theme"), { ssr: false });
 import { NextIntlClientProvider } from "next-intl";
+import Switch from ">_/actions/switch";
 // Dependencies -------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
 import { cookies } from "next/headers";
 import dynamic from "next/dynamic";
 import { getMessages, getTranslations } from "next-intl/server";
+import { themesFallback } from ">_/configuration";
+// Styles -------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
+import ">_/app/variables.css";
+import ">_/app/reset.css";
+import ">_/public/fontawesome/css/brands.min.css";
+import ">_/public/fontawesome/css/fontawesome.min.css";
+import ">_/public/fontawesome/css/solid.min.css";
 // Types --------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
 import type TLayout from ">_/types/TLayout";
 import type TTheme from ">_/types/TTheme";
@@ -21,16 +29,17 @@ const RootLayout = async ({ children, params }: TLayout): Promise<React.JSX.Elem
     // Properties ---------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     const { locale } = params || {};
     const cookie: string | undefined = cookies().get(`theme`)?.value;
-    const theme: TTheme = (isTheme(cookie)) ? cookie : `dark`;
+    const theme: TTheme = (isTheme(cookie)) ? cookie : themesFallback;
     const messages = await getMessages();
     // JSX ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     return <html lang={ locale } style={ { colorScheme: theme } }>
         <body className="">
             <Theme attribute="class" defaultTheme={ theme }>
                 <NextIntlClientProvider messages={ messages }>
-                { /* Your navbar could go here */ }
-                { children }    
-                { /* Your footer could go here */ }
+                    <Switch icons={ { left: "sun", right: "moon" } } id="theme" name="theme" role="switch" values={ { left: "light", right: "dark" } }/>
+                    { /* Your navbar could go here */ }
+                    { children }    
+                    { /* Your footer could go here */ }
                 </NextIntlClientProvider>
             </Theme>
         </body>

@@ -1,18 +1,19 @@
-// Types --------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import type TLocale from ">_/types/TLocale";
-import type TTheme from ">_/types/TTheme";
 // Type ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
-type TLocales = [ `en`, `fr` ];
+type TSwitchDebug = { checked?: boolean, position: `left` | `right`, theme?: string };
 // Type ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
-type TThemes = [ `dark`, `light` ];
+type TSwitchValues = { left: number | string | true, right: number | string | false };
 // Type ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
-type TConfiguration = {
-    locales: TLocales,
-    localesFallback: TLocale,
-    projectName: string,
-    themes: TThemes,
-    themesFallback: TTheme,
-    version: string
+type TSwitch = {
+    checked?: boolean,
+    disabled?: boolean,
+    icons: { left: string, right: string },
+    id: string,
+    isThemeSwitcher?: boolean,
+    name: string,
+    role?: string,
+    values: TSwitchValues
 };
 // Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
-export default TConfiguration;
+export default TSwitch;
+// Exports ------------------------------------------------------------------------------------------------------------------------------------------------------------- [ EXPORTS ]
+export type { TSwitchDebug, TSwitchValues };
