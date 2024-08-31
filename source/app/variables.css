@@ -1,0 +1,102 @@
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* XX - Breakpoints
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* sm => 360px                                                                                                                                                                    */
+/* md => 720px                                                                                                                                                                    */
+/* lg => 1080px                                                                                                                                                                   */
+/* xl => 1440px                                                                                                                                                                   */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* 01 - Variables
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+:root {
+    --background-blur: var(--color-dark-blur);
+    --background-color-1: var(--color-dark-1);
+    --background-color-2: var(--color-dark-2);
+    --background-color-3: var(--color-dark-3);
+    --background-color-4: var(--color-dark-4);
+    --background-color-5: var(--color-dark-5);
+    --bar: 50px;
+    --blur: blur(4px);
+    --border-dashed: 2px dashed;
+    --border-solid: 2px solid;
+    --color-accent-1: #EFD9AA;
+    --color-accent-2: #BA9C65;
+    --color-accent-3: #9A6B32;
+    --color-accent-4: #55391C;
+    --color-dark-blur: #1F1F2090;
+    --color-dark-1: #1F1F20;
+    --color-dark-2: #242425;
+    --color-dark-3: #2A2A2A;
+    --color-dark-4: #2F2F30;
+    --color-dark-5: #343435;
+    --color-error-1: #FF8E8E;
+    --color-error-2: #E46363;
+    --color-error-3: #B63838;
+    --color-error-4: #720C0C;
+    --color-information-1: #8EDBFF;
+    --color-information-2: #4FAAD4;
+    --color-information-3: #1783B4;
+    --color-information-4: #00496B;
+    --color-light-blur: #F8F8F890;
+    --color-light-1: #F8F8F8;
+    --color-light-2: #F0F0F0;
+    --color-light-3: #E8E8E8;
+    --color-light-4: #E0E0E0;
+    --color-light-5: #D8D8D8;
+    --color-success-1: #8EFFBD;
+    --color-success-2: #5AD88F;
+    --color-success-3: #2BA55E;
+    --color-success-4: #0D7A3A;
+    --font-size: 14px;
+    --mask-h-accent: linear-gradient(to right, transparent 0%, var(--color-accent-2) 30%, var(--color-accent-2) 60%, transparent 100%);
+    --mask-h: linear-gradient(to right, transparent 0%, var(--background-color-1) 30%, var(--background-color-1) 60%, transparent 100%);
+    --mask-h-reverse: linear-gradient(to right, var(--background-color-1) 0%, transparent 30%, transparent 60%, var(--background-color-1) 100%);
+    --mask-r: radial-gradient(transparent 0%, var(--background-color-1) 80%);
+    --mask-v: linear-gradient(to top, var(--background-color-1) 0%, transparent 50%, var(--background-color-1) 100%);
+    --radius-5: 5px;
+    --radius-5-child: 3px;
+    --radius-10: 10px;
+    --radius-10-child: 8px;
+    --radius-15: 15px;
+    --radius-15-child: 13px;
+    --radius-20: 20px;
+    --radius-20-child: 18px;
+    --spacing: 10px;
+    --shadow-box: 0px 0px 10px #00000090;
+    --shadow-box-hover: 0px 0px 10px #00000090;
+    --shadow-drop: 0px 0px 5px #00000090;
+    --shadow-drop-hover: 0px 0px 10px #00000090;
+    --text-color-placeholder: var(--color-light-blur);
+    --text-color-1: var(--color-light-1);
+    --text-color-2: var(--color-light-2);
+    --text-color-3: var(--color-light-3);
+    --text-color-4: var(--color-light-4);
+    --text-color-5: var(--color-light-5);
+    --text-glow: 0px 0px 5px var(--color-accent-2);
+    --text-glow-hover: 0px 0px 10px var(--color-accent-2);
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* 02 - Themes
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+html[class*="light"] {
+    --background-blur: var(--color-light-blur);
+    --background-color-1: var(--color-light-1);
+    --background-color-2: var(--color-light-2);
+    --background-color-3: var(--color-light-3);
+    --background-color-4: var(--color-light-4);
+    --background-color-5: var(--color-light-5);
+    --color-accent-1: #D161DB;
+    --color-accent-2: #AF3CB9;
+    --color-accent-3: #73127C;
+    --color-accent-4: #500657;
+    --shadow-box: 0px 0px 5px #00000070;
+    --shadow-box-hover: 0px 0px 10px #00000070;
+    --shadow-drop: 0px 0px 5px #00000070;
+    --shadow-drop-hover: 0px 0px 10px #00000070;
+    --text-color-placeholder: var(--color-dark-blur);
+    --text-color-1: var(--color-dark-1);
+    --text-color-2: var(--color-dark-2);
+    --text-color-3: var(--color-dark-3);
+    --text-color-4: var(--color-dark-4);
+    --text-color-5: var(--color-dark-5);
+}
