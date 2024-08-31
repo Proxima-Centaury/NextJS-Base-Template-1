@@ -33,7 +33,7 @@ const Switch = (props: TSwitch): React.JSX.Element => {
     const inputProperties = { checked: position == `right`, defaultValue, disabled, id, name, onChange: handleChange, role, type: `checkbox` };
     // Debugs -------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     const debug: TSwitchDebug = { checked: position == `right`, position, theme: value as TTheme };
-    console.log(debug);
+    // console.log(debug);
     // JSX ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     return <label className={ SwitchStyles.container } htmlFor={ id }>
         <input { ...inputProperties }/>
