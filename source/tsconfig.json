@@ -11,6 +11,7 @@
         "noEmit": true,
         "paths": {
             ">_/*": [ "./*" ],
+            ">_/actions/*": [ "./components/actions/*" ],
             ">_/helpers/*": [ "./components/helpers/*" ]
         },
         "plugins": [ { "name": "next" } ],
