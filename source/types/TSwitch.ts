@@ -5,19 +5,17 @@ type TValue =  number | string;
 // Type ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
 type TSwitchDebug = { checked?: boolean, position: TPosition, theme?: string };
 // Type ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
-type TSwitchValues = { left: TValue | true, right: TValue | false };
-// Type ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
 type TSwitch = {
-    checked?: boolean,
+    defaultValue?: TValue,
     disabled?: boolean,
     icons: { left: string, right: string },
     id: string,
     name: string,
     role?: string,
     themeSwitcher?: boolean,
-    values: TSwitchValues
+    values: { left: TValue | false, right: TValue | true }
 };
 // Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
 export default TSwitch;
 // Exports ------------------------------------------------------------------------------------------------------------------------------------------------------------- [ EXPORTS ]
-export type { TSwitchDebug, TSwitchValues };
+export type { TPosition, TValue, TSwitchDebug };
