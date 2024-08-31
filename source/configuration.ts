@@ -3,7 +3,7 @@ import type TConfiguration from ">_/types/TConfiguration";
 // Configuration -------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
 const configuration: TConfiguration = {
     locales: [ `en`, `fr` ],
-    projectName: ``,
+    projectName: `NextJS Base Template I`,
     themes: [ `dark`, `light` ],
     version: `1.0`
 };
