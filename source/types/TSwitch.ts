@@ -12,9 +12,9 @@ type TSwitch = {
     disabled?: boolean,
     icons: { left: string, right: string },
     id: string,
-    isThemeSwitcher?: boolean,
     name: string,
     role?: string,
+    themeSwitcher?: boolean,
     values: TSwitchValues
 };
 // Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
