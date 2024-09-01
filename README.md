@@ -11,7 +11,7 @@ Before adding more `languages`, please bear in mind the followings :<br>
 First, you will need to add your additional supported `locales` in the `configuration.ts` file.<br>
 ```typescript
 const configuration: TConfiguration = {
-    locales: [ `en`, `fr` ] // <-- You add your locales here : [ `en`, `fr`, `jp`, `kr` ]
+    locales: [ `en`, `fr` ], // <-- You add your locales here : [ `en`, `fr`, `jp`, `kr` ]
     localesFallback: `en` // <-- You can also change your fallback language here
 };
 ```
@@ -35,7 +35,7 @@ Before adding more `themes`, please bear in mind the followings :<br>
 First, you will need to add your additional supported `themes` in the `configuration.ts` file.<br>
 ```typescript
 const configuration: TConfiguration = {
-    themes: [ `dark`, `light` ] // <-- You add your themes here : [ `dark`, `dawn`, `light`, `neon` ]
+    themes: [ `dark`, `light` ], // <-- You add your themes here : [ `dark`, `dawn`, `light`, `neon` ]
     themesFallback: `light` // <-- You can also change your fallback theme here
 };
 ```
