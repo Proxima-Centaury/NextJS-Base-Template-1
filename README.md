@@ -1,0 +1,50 @@
+## Template
+This template features `internationalization` and `theme handling`.<br>
+Instructions on how to add additional `languages` and `themes` to your project below.<br>
+
+## Adding more languages
+Before adding more `languages`, please bear in mind the followings :<br>
+
+1. Supporting more than `2 locales` will make the <u>**Switch component**</u> incompatible.
+2. Therefore you should use the <u>**Select component**</u> instead.
+
+First, you will need to add your additional supported `locales` in the `configuration.ts` file.<br>
+```typescript
+const configuration: TConfiguration = {
+    locales: [ `en`, `fr` ] // <-- You add your locales here : [ `en`, `fr`, `jp`, `kr` ]
+    localesFallback: `en` // <-- You can also change your fallback language here
+};
+```
+Then you can create new `.json` files matching your `locales` under `/translations`.<br>
+```markdown
+/translations
+├─── en.json
+├─── fr.json
+├─── jp.json
+├─── kr.json
+```
+That's how you set up new `locales`, for further information, please look at the documentation.<br>
+There's a link to the documentation below : [next-intl](#used-packages).<br>
+
+## Adding more themes
+Before adding more `themes`, please bear in mind the followings :<br>
+
+1. Supporting more than `2 themes` will make the <u>**Switch component**</u> incompatible.
+2. Therefore you should use the <u>**Select component**</u> instead.
+
+First, you will need to add your additional supported `themes` in the `configuration.ts` file.<br>
+```typescript
+const configuration: TConfiguration = {
+    themes: [ `dark`, `light` ] // <-- You add your themes here : [ `dark`, `dawn`, `light`, `neon` ]
+    themesFallback: `light` // <-- You can also change your fallback theme here
+};
+```
+Then you can work on your `css variables` for each `theme` and implement them according to your setup.<br>
+Your implementation will vary depending on your approach : `vanilla CSS`, `frameworks`, `preprocessors`.<br>
+That's how you set up new `themes`, for further information, please look at the documentation.<br>
+There's a link to the documentation below : [next-themes](#used-packages).<br>
+
+## Used packages
+- Client-side cookie handling : [cookies-next](https://github.com/andreizanik/cookies-next)
+- Internationalization : [next-intl](https://next-intl-docs.vercel.app/docs/getting-started)
+- Theme handling : [next-themes](https://github.com/pacocoursey/next-themes)
