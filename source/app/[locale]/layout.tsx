@@ -16,9 +16,8 @@ import ">_/public/fontawesome/css/solid.min.css";
 // Types --------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
 import type TLayout from ">_/types/TLayout";
 import type TSwitch from ">_/types/TSwitch";
-import type TTheme from ">_/types/TTheme";
 // Validators ---------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import { isTheme } from ">_/validators/custom";
+import { isSupported } from ">_/utilities/validators";
 // Meta ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
 export async function generateMetadata({ params }: TLayout) {
     const { locale } = params || {};
@@ -30,7 +29,7 @@ const RootLayout = async ({ children, params }: TLayout): Promise<React.JSX.Elem
     // Properties ---------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     const { locale } = params || {};
     const cookie: string | undefined = cookies().get(`theme`)?.value;
-    const theme: TTheme = (isTheme(cookie)) ? cookie : themesFallback;
+    const theme: string | undefined = (isSupported(`theme`, cookie)) ? cookie : themesFallback;
     const messages = await getMessages();
     // JSX Properties ------------------------------------------------------------------------------------------------------------------------------------------------ [ COMPONENT ]
     const switchIcons: TSwitch[`icons`] = { left: `sun`, right: `moon` };

@@ -10,9 +10,8 @@ import SwitchStyles from ">_/actions/switch/component.module.css";
 import type { ChangeEventHandler } from "react";
 import type TSwitch from ">_/types/TSwitch";
 import type { TPosition, TValue, TSwitchDebug } from ">_/types/TSwitch";
-import type TTheme from ">_/types/TTheme";
 // Validators ---------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import { isObjectEmpty } from ">_/validators/default";
+import { isObjectEmpty } from ">_/utilities/validators";
 // Switch ----------------------------------------------------------------------------------------------------------------------------------------------------- [ ACTION COMPONENT ]
 const Switch = (props: TSwitch): React.JSX.Element => {
     const { defaultValue, disabled, id, icons, name, role, themeSwitcher, values } = props;
@@ -26,13 +25,13 @@ const Switch = (props: TSwitch): React.JSX.Element => {
         const { checked } = target;
         const selected: TValue | boolean = (checked) ? values[`right`] : values[`left`];
         setValue(selected);
-        if(themeSwitcher) return setTheme(selected as TTheme);
+        if(themeSwitcher) return setTheme(selected.toString());
     };
     // JSX Properties ------------------------------------------------------------------------------------------------------------------------------------------------ [ COMPONENT ]
     const position: TPosition = (value == values[`right`]) ? `right` : `left`;
     const inputProperties = { checked: position == `right`, defaultValue, disabled, id, name, onChange: handleChange, role, type: `checkbox` };
     // Debugs -------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
-    const debug: TSwitchDebug = { checked: position == `right`, position, theme: value as TTheme };
+    const debug: TSwitchDebug = { checked: position == `right`, position, theme: value.toString() };
     // console.log(debug);
     // JSX ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     return <label className={ SwitchStyles.container } htmlFor={ id }>
