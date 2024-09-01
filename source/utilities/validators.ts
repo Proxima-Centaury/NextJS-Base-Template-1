@@ -1,3 +1,5 @@
+// Dependencies -------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
+import { locales, themes } from ">_/configuration";
 // Validator ------------------------------------------------------------------------------------------------------------------------------------------------------ [ DECLARATIONS ]
 /**
  * @ `dsc` - Checks if {@link element} is an `array`
@@ -77,10 +79,18 @@ const isString = (element: unknown): element is string => typeof element == `str
 const isStringEmpty = (element: unknown): boolean => isString(element) && element.length <= 0;
 // Validator ------------------------------------------------------------------------------------------------------------------------------------------------------ [ DECLARATIONS ]
 /**
+ * @ `dsc` - Checks if {@link element} is a supported `locale` or `theme`
+ * @ `arg` - Argument {@link type} is of `string` type, should be `locale` or `theme`
+ * @ `arg` - Argument {@link element} is of `any` type
+ * @ `rtn` - Returns `true` if {@link element} is supported, `false` otherwise
+ */
+const isSupported = (type: `locale` | `theme`, element: any): boolean => (type == `locale` && locales.includes(element)) || (type == `theme` && themes.includes(element));
+// Validator ------------------------------------------------------------------------------------------------------------------------------------------------------ [ DECLARATIONS ]
+/**
  * @ `dsc` - Checks if {@link element} is `undefined`
  * @ `arg` - Argument {@link element} is of `unknown` type
  * @ `rtn` - Returns `true` if type is conform, `false` otherwise
  */
 const isUndefined = (element: unknown): element is undefined => element === undefined;
 // Exports ------------------------------------------------------------------------------------------------------------------------------------------------------------- [ EXPORTS ]
-export { isArray, isArrayEmpty, isBoolean, isFormData, isFunction, isNull, isNumber, isObject, isObjectEmpty, isString, isStringEmpty, isUndefined };
+export { isArray, isArrayEmpty, isBoolean, isFormData, isFunction, isNull, isNumber, isObject, isObjectEmpty, isString, isStringEmpty, isSupported, isUndefined };
