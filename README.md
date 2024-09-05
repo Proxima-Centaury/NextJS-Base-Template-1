@@ -5,7 +5,7 @@ Instructions on how to add additional `languages` and `themes` to your project b
 ## Adding more languages
 Before adding more `languages`, please bear in mind the followings :<br>
 
-1. Supporting more than `2 locales` will make the <u>**Switch component**</u> incompatible.
+1. Supporting more than 2 `locales` will make the <u>**Switch component**</u> incompatible.
 2. Therefore you should use the <u>**Select component**</u> instead.
 
 First, you will need to add your additional supported `locales` in the `configuration.ts` file.<br>
@@ -29,7 +29,7 @@ There's a link to the documentation below : [next-intl](#used-packages).<br>
 ## Adding more themes
 Before adding more `themes`, please bear in mind the followings :<br>
 
-1. Supporting more than `2 themes` will make the <u>**Switch component**</u> incompatible.
+1. Supporting more than 2 `themes` will make the <u>**Switch component**</u> incompatible.
 2. Therefore you should use the <u>**Select component**</u> instead.
 
 First, you will need to add your additional supported `themes` in the `configuration.ts` file.<br>
