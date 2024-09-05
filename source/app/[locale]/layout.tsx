@@ -32,14 +32,18 @@ const RootLayout = async ({ children, params }: TLayout): Promise<React.JSX.Elem
     const theme: string | undefined = (isSupported(`theme`, cookie)) ? cookie : themesFallback;
     const messages = await getMessages();
     // JSX Properties ------------------------------------------------------------------------------------------------------------------------------------------------ [ COMPONENT ]
-    const switchIcons: TSwitch[`icons`] = { left: `sun`, right: `moon` };
-    const switchValues: TSwitch[`icons`] = { left: `light`, right: `dark` };
+    const localeSwitchIcons: TSwitch[`icons`] = { left: `earth-americas`, right: `earth-europe` };
+    const localeSwitchValues: TSwitch[`icons`] = { left: `en`, right: `fr` };
+    const themeSwitchIcons: TSwitch[`icons`] = { left: `sun`, right: `moon` };
+    const themeSwitchValues: TSwitch[`icons`] = { left: `light`, right: `dark` };
     // JSX ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     return <html lang={ locale } style={ { colorScheme: theme } }>
         <body className="">
             <Theme attribute="class" defaultTheme={ theme }>
                 <NextIntlClientProvider messages={ messages }>
-                    <Switch icons={ switchIcons } id="theme" name="theme" role="switch" themeSwitcher values={ switchValues }/>
+                    <p>Current locale : { locale }</p>
+                    <Switch icons={ localeSwitchIcons } id="locale" name="locale" role="switch" localeSwitcher values={ localeSwitchValues }/>
+                    <Switch icons={ themeSwitchIcons } id="theme" name="theme" role="switch" themeSwitcher values={ themeSwitchValues }/>
                     { /* Your navbar could go here */ }
                     { children }    
                     { /* Your footer could go here */ }

@@ -10,6 +10,7 @@ type TSwitch = {
     disabled?: boolean,
     icons: { left: string, right: string },
     id: string,
+    localeSwitcher?: boolean,
     name: string,
     role?: string,
     themeSwitcher?: boolean,
