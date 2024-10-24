@@ -1,12 +1,12 @@
 ## Template
-This template features `internationalization` and `theme handling`.<br>
+This template features `internationalization` and `theme` handling.<br>
 Instructions on how to add additional `languages` and `themes` to your project below.<br>
 
 ## Adding more languages
 Before adding more `languages`, please bear in mind the followings :<br>
 
 1. Supporting more than 2 `locales` will make the <u>**Switch component**</u> incompatible.
-2. Therefore you should use the <u>**Select component**</u> instead.
+2. Therefore you should use a <u>**Select component**</u> instead.
 
 First, you will need to add your additional supported `locales` in the `configuration.ts` file.<br>
 ```typescript
@@ -30,7 +30,7 @@ There's a link to the documentation below : [next-intl](#used-packages).<br>
 Before adding more `themes`, please bear in mind the followings :<br>
 
 1. Supporting more than 2 `themes` will make the <u>**Switch component**</u> incompatible.
-2. Therefore you should use the <u>**Select component**</u> instead.
+2. Therefore you should use a <u>**Select component**</u> instead.
 
 First, you will need to add your additional supported `themes` in the `configuration.ts` file.<br>
 ```typescript
