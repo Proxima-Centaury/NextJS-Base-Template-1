@@ -47,3 +47,4 @@ There's a link to the documentation below : [next-themes](#used-packages).<br>
 ## Used packages
 - Internationalization : [next-intl](https://next-intl-docs.vercel.app/docs/getting-started)
 - Theme handling : [next-themes](https://github.com/pacocoursey/next-themes)
+- Bundle analyzer : [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
