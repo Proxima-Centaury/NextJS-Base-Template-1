@@ -45,6 +45,5 @@ That's how you set up new `themes`, for further information, please look at the 
 There's a link to the documentation below : [next-themes](#used-packages).<br>
 
 ## Used packages
-- Client-side cookie handling : [cookies-next](https://github.com/andreizanik/cookies-next)
 - Internationalization : [next-intl](https://next-intl-docs.vercel.app/docs/getting-started)
 - Theme handling : [next-themes](https://github.com/pacocoursey/next-themes)
