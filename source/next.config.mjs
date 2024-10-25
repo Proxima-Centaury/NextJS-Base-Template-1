@@ -15,7 +15,6 @@ const nextConfiguration = {
         workerThreads: true // Multi-threading compilation
     },
     productionBrowserSourceMaps: false,
-    swcMinify: true, // To be removed in NextJS 15
     webpack: (config, { isServer }) => {
         if(!isServer) {
             config.cache = {
