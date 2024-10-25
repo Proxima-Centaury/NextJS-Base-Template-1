@@ -6,8 +6,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-// Styles -------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import SwitchStyles from ">_/actions/switch/component.module.css";
 // Types --------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
 import type { ChangeEventHandler } from "react";
 import type TSwitch from ">_/types/TSwitch";
@@ -41,9 +39,9 @@ const Switch = (props: TSwitch): React.JSX.Element => {
     const debug: TSwitchDebug = { checked: position == `right`, position, theme: value.toString() };
     // console.log(debug);
     // JSX ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
-    return <label className={ SwitchStyles.container } htmlFor={ id }>
-        <input { ...inputProperties }/>
-        <span className={ SwitchStyles.icon } data-position={ position }>
+    return <label className="switch" htmlFor={ id }>
+        <input className="checkbox" { ...inputProperties }/>
+        <span className="icon" data-position={ position }>
             { (!isObjectEmpty("icons")) ? <i className={ `fa-solid fa-${ icons[position] }` }/> : null }
         </span>
     </label>;

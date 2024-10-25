@@ -8,8 +8,7 @@ import dynamic from "next/dynamic";
 import { getMessages, getTranslations } from "next-intl/server";
 import { themesFallback } from ">_/configuration";
 // Styles -------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import ">_/app/variables.css";
-import ">_/app/reset.css";
+import ">_/app/root.css";
 import ">_/public/fontawesome/css/brands.min.css";
 import ">_/public/fontawesome/css/fontawesome.min.css";
 import ">_/public/fontawesome/css/solid.min.css";
