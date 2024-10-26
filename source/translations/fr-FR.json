@@ -5,5 +5,8 @@
     },
     "Z9 - Common": {
         "selectedLocale": "Langue sélectionnée"
+    },
+    "ZA - Robots": {
+        "allowedPaths": "/"
     }
 }

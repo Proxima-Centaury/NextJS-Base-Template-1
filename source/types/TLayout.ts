@@ -4,3 +4,5 @@ type TParams = { collection?: string, locale?: string };
 type TLayout = { children?: React.ReactNode, params?: TParams };
 // Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
 export default TLayout;
+// Exports ------------------------------------------------------------------------------------------------------------------------------------------------------------- [ EXPORTS ]
+export type { TParams };

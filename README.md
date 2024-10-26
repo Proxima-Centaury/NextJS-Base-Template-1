@@ -1,5 +1,5 @@
 ## Template
-This template features `tailwind`, `internationalization` and `theme` handling.<br>
+This template features `sitemap`, `tailwind`, `internationalization` and `theme` handling.<br>
 Instructions on how to add additional `languages` and `themes` to your project below.<br>
 
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
@@ -52,7 +52,8 @@ That's how you set up new `themes`, for further information, please look at the 
 There's a link to the documentation below : [next-themes](#used-packages).<br>
 
 ## Used packages
-- Internationalization : [next-intl](https://next-intl-docs.vercel.app/docs/getting-started)
-- Flag icons : [flag-icons](https://github.com/lipis/flag-icons)
-- Theme handling : [next-themes](https://github.com/pacocoursey/next-themes)
 - Bundle analyzer : [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+- Flag icons : [flag-icons](https://github.com/lipis/flag-icons)
+- Internationalization : [next-intl](https://next-intl-docs.vercel.app/docs/getting-started)
+- Sitemap : [next-sitemap](https://www.npmjs.com/package/next-sitemap)
+- Theme handling : [next-themes](https://github.com/pacocoursey/next-themes)

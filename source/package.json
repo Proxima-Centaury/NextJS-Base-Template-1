@@ -4,6 +4,7 @@
         "flag-icons": "^7.2.3",
         "next": "14.2.7",
         "next-intl": "^3.18.0",
+        "next-sitemap": "^4.2.3",
         "next-themes": "^0.3.0",
         "react": "^18",
         "react-dom": "^18"
@@ -25,6 +26,7 @@
         "build": "next build",
         "dev": "next dev",
         "lint": "next lint",
+        "postbuild": "next-sitemap --config next-sitemap.config.js",
         "start": "next start"
     },
     "version": "1.0.0"
