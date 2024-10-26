@@ -13,22 +13,22 @@ Instructions on how to add additional `languages` and `themes` to your project b
 Before adding more `languages`, please bear in mind the followings :<br>
 
 1. Supporting more than 2 `locales` will make the <u>**Switch component**</u> incompatible.
-2. Therefore you should use a <u>**Select component**</u> instead.
+2. Therefore you should use a <u>**Select component**</u> or equivalent instead.
 
 First, you will need to add your additional supported `locales` in the `configuration.ts` file.<br>
 ```typescript
 const configuration: TConfiguration = {
-    locales: [ `en`, `fr` ], // <-- You add your locales here : [ `en`, `fr`, `jp`, `kr` ]
-    localesFallback: `en` // <-- You can also change your fallback language here
+    locales: [ `en-US`, `fr-FR` ], // <-- You add your locales here : [ `en-US`, `fr-FR`, `jp-JP`, `kr-KR` ]
+    localesFallback: `en-US` // <-- You can also change your fallback language here
 };
 ```
 Then you can create new `.json` files matching your `locales` under `/translations`.<br>
 ```markdown
 /translations
-├─── en.json
-├─── fr.json
-├─── jp.json
-├─── kr.json
+├─── en-US.json
+├─── fr-FR.json
+├─── jp-JP.json
+├─── kr-KR.json
 ```
 That's how you set up new `locales`, for further information, please look at the documentation.<br>
 There's a link to the documentation below : [next-intl](#used-packages).<br>
@@ -37,7 +37,7 @@ There's a link to the documentation below : [next-intl](#used-packages).<br>
 Before adding more `themes`, please bear in mind the followings :<br>
 
 1. Supporting more than 2 `themes` will make the <u>**Switch component**</u> incompatible.
-2. Therefore you should use a <u>**Select component**</u> instead.
+2. Therefore you should use a <u>**Select component**</u> or equivalent instead.
 
 First, you will need to add your additional supported `themes` in the `configuration.ts` file.<br>
 ```typescript
@@ -53,5 +53,6 @@ There's a link to the documentation below : [next-themes](#used-packages).<br>
 
 ## Used packages
 - Internationalization : [next-intl](https://next-intl-docs.vercel.app/docs/getting-started)
+- Flag icons : [flag-icons](https://github.com/lipis/flag-icons)
 - Theme handling : [next-themes](https://github.com/pacocoursey/next-themes)
 - Bundle analyzer : [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)

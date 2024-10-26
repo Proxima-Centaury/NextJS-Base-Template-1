@@ -2,8 +2,8 @@
 import type TConfiguration from ">_/types/TConfiguration";
 // Configuration -------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
 const configuration: TConfiguration = {
-    locales: [ `en`, `fr` ],
-    localesFallback: `en`,
+    locales: [ `en-US`, `fr-FR` ],
+    localesFallback: `en-US`,
     projectName: `NextJS Base Template I`,
     themes: [ `dark`, `light` ],
     themesFallback: `light`,
