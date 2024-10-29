@@ -1,6 +1,7 @@
 ## Template
 This template features `sitemap`, `tailwind`, `internationalization` and `theme` handling.<br>
 Instructions on how to add additional `languages` and `themes` to your project below.<br>
+Also `CI` task added, `CD` will be added as well later.<br>
 
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
