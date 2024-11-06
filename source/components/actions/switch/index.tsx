@@ -1,28 +1,26 @@
 "use client";
-// Dependencies -------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import { localesFallback, themesFallback } from ">_/configuration";
-// Hooks --------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import { usePathname, useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-// Types --------------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import type { ChangeEventHandler } from "react";
-import type TSwitch from ">_/types/TSwitch";
-import type { TPosition, TValue, TSwitchDebug } from ">_/types/TSwitch";
-// Validators ---------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
+
 import { isObjectEmpty } from ">_/utilities/validators";
-// Switch ----------------------------------------------------------------------------------------------------------------------------------------------------- [ ACTION COMPONENT ]
+import { localesFallback, themesFallback } from ">_/configuration";
+import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
+import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import type { ChangeEventHandler, InputHTMLAttributes } from "react";
+import type { TPosition, TSwitchDebug, TValue } from ">_/types/TSwitch";
+import type TSwitch from ">_/types/TSwitch";
+
 const Switch = (props: TSwitch): React.JSX.Element => {
-    const { defaultValue, disabled, id, icons, localeSwitcher, name, role, themeSwitcher, values } = props;
-    // Hooks --------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
+    const { defaultValue, disabled, icons, id, localeSwitcher, name, role, themeSwitcher, values } = props;
+
     const locale: string = useLocale();
     const pathname: string = usePathname();
-    const router = useRouter();
+    const router: AppRouterInstance = useRouter();
+
     const { theme, setTheme } = useTheme();
-    // States -------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
     const [ value, setValue ] = useState<TValue | boolean>((themeSwitcher) ? theme || themesFallback : ((localeSwitcher) ? locale || localesFallback : defaultValue || false));
-    // Handlers ------------------------------------------------------------------------------------------------------------------------------------------------------ [ COMPONENT ]
+
     const handleChange: ChangeEventHandler = (event) => {
         const target: HTMLInputElement = event.target as HTMLInputElement;
         const { checked } = target;
@@ -30,17 +28,15 @@ const Switch = (props: TSwitch): React.JSX.Element => {
         setValue(selected);
         if(themeSwitcher) return setTheme(selected.toString());
     };
-    // Effects ------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
+
     useEffect(() => (localeSwitcher) ? router.push(pathname.replace(`/${ locale }`, `/${ value || localesFallback }`)) : undefined, [ value ]);
-    // JSX Properties ------------------------------------------------------------------------------------------------------------------------------------------------ [ COMPONENT ]
+
     const position: TPosition = (value == values[`right`]) ? `right` : `left`;
-    const inputProperties = { checked: position == `right`, defaultValue, disabled, id, name, onChange: handleChange, role, type: `checkbox` };
-    // Debugs -------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
+    const inputProps: InputHTMLAttributes<HTMLInputElement> = { checked: position == `right`, defaultValue, disabled, id, name, onChange: handleChange, role, type: `checkbox` };
     const debug: TSwitchDebug = { checked: position == `right`, position, theme: value.toString() };
-    // console.log(debug);
-    // JSX ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ COMPONENT ]
+
     return <label className="switch" htmlFor={ id }>
-        <input className="checkbox" { ...inputProperties }/>
+        <input className="checkbox" { ...inputProps }/>
         <span className="icon" data-position={ position }>
             { (!isObjectEmpty("icons")) ? <i className={ `fa-solid fa-${ icons[position] }` }/> : null }
         </span>

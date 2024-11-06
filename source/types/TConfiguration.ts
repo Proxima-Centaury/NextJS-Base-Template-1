@@ -1,4 +1,3 @@
-// Type ----------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
 type TConfiguration = {
     locales: string[],
     localesFallback: string,
@@ -7,5 +6,5 @@ type TConfiguration = {
     themesFallback: string,
     version: string
 };
-// Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
+
 export default TConfiguration;
