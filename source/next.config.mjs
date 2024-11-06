@@ -1,18 +1,15 @@
-// Dependencies -------------------------------------------------------------------------------------------------------------------------------------------------------- [ IMPORTS ]
-import { fileURLToPath } from "url";
 import createNextIntlPlugin from "next-intl/plugin";
+import { fileURLToPath } from "url";
 import withBundleAnalyzer from "@next/bundle-analyzer";
-// Configuration -------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
-const withNextInternationalization = createNextIntlPlugin(`./i18n.ts`);
-// Configuration -------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
+
 const withAnalyze = withBundleAnalyzer({ enabled: process.env.ANALYZE === `true` });
-// Variable ------------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
+const withNextInternationalization = createNextIntlPlugin(`./i18n.ts`);
 const __filename = fileURLToPath(import.meta.url);
-// Configuration -------------------------------------------------------------------------------------------------------------------------------------------------- [ DECLARATIONS ]
+
 /** @type { import("next").NextConfig } */
 const nextConfiguration = {
     experimental: {
-        workerThreads: true // Multi-threading compilation
+        workerThreads: true // Multi-threading work
     },
     productionBrowserSourceMaps: false,
     webpack: (config, { isServer }) => {
@@ -27,5 +24,5 @@ const nextConfiguration = {
         return config;
     }
 };
-// Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
+
 export default withNextInternationalization(withAnalyze(nextConfiguration));
