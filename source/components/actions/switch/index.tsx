@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import type { ChangeEventHandler, InputHTMLAttributes } from "react";
-import type { TPosition, TSwitchDebug, TValue } from ">_/types/TSwitch";
+import type { TPosition, TValue } from ">_/types/TSwitch";
 import type TSwitch from ">_/types/TSwitch";
 
 const Switch = (props: TSwitch): React.JSX.Element => {
@@ -33,7 +33,6 @@ const Switch = (props: TSwitch): React.JSX.Element => {
 
     const position: TPosition = (value == values[`right`]) ? `right` : `left`;
     const inputProps: InputHTMLAttributes<HTMLInputElement> = { checked: position == `right`, defaultValue, disabled, id, name, onChange: handleChange, role, type: `checkbox` };
-    const debug: TSwitchDebug = { checked: position == `right`, position, theme: value.toString() };
 
     return <label className="switch" htmlFor={ id }>
         <input className="checkbox" { ...inputProps }/>
