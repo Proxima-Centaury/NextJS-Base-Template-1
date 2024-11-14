@@ -1,6 +1,6 @@
 {
     "00 - Metadata": {
-        "title": "FR - NextJS Base Template I",
+        "title": "JP - NextJS Base Template I",
         "description": "TBD"
     },
     "Z9 - Common": {
@@ -8,7 +8,7 @@
         "selectedLocale": "選択した言語",
         "theme": "テーマ"
     },
-    "Z8 - Aria Labels": {
+    "Z8 - Aria Label": {
         "navbar": "ナビゲーションバー",
         "settingsMenu": "設定"
     }

@@ -11,7 +11,7 @@ import type TSwitch from ">_/types/TSwitch";
 const SettingsMenu = (props: TSettingsMenu): React.JSX.Element => {
     const { expanded, locale } = props;
 
-    const translateAriaLabel = useTranslations(`Z8 - Aria Labels`);
+    const translateAriaLabel = useTranslations(`Z8 - Aria Label`);
     const translateCommon = useTranslations(`Z9 - Common`);
 
     const localeSwitchIcons: TSwitch[`icons`] = { left: `earth-americas`, right: `earth-europe` };

@@ -17,8 +17,8 @@ const Switch = (props: TSwitch): React.JSX.Element => {
     const locale: string = useLocale();
     const pathname: string = usePathname();
     const router: AppRouterInstance = useRouter();
-
     const { theme, setTheme } = useTheme();
+
     const [ value, setValue ] = useState<TValue | boolean>((themeSwitcher) ? theme || themesFallback : ((localeSwitcher) ? locale || localesFallback : defaultValue || false));
 
     const handleChange: ChangeEventHandler = (event) => {
@@ -41,5 +41,5 @@ const Switch = (props: TSwitch): React.JSX.Element => {
         </span>
     </label>;
 };
-// Default Export ------------------------------------------------------------------------------------------------------------------------------------------------------ [ EXPORTS ]
+
 export default Switch;
