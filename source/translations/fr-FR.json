@@ -4,6 +4,12 @@
         "description": "TBD"
     },
     "Z9 - Common": {
-        "selectedLocale": "Langue sélectionnée"
+        "language": "Langue",
+        "selectedLocale": "Langue sélectionnée",
+        "theme": "Thème"
+    },
+    "Z8 - Aria Labels": {
+        "navbar": "Barre de navigation",
+        "settingsMenu": "Paramètres"
     }
 }

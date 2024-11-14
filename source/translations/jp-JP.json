@@ -4,6 +4,12 @@
         "description": "TBD"
     },
     "Z9 - Common": {
-        "selectedLocale": "選択した言語"
+        "language": "言語",
+        "selectedLocale": "選択した言語",
+        "theme": "テーマ"
+    },
+    "Z8 - Aria Labels": {
+        "navbar": "ナビゲーションバー",
+        "settingsMenu": "設定"
     }
 }
