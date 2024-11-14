@@ -1,6 +1,6 @@
 type TPosition = `left` | `right`;
 type TValue =  number | string;
-type TSwitchDebug = { checked?: boolean, position: TPosition, theme?: string };
+
 type TSwitch = {
     defaultValue?: TValue,
     disabled?: boolean,
@@ -14,4 +14,4 @@ type TSwitch = {
 };
 
 export default TSwitch;
-export type { TPosition, TValue, TSwitchDebug };
+export type { TPosition, TValue };
