@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 const settingsMenuComponent = (theme: any) => {
     return {
         ".settingsMenu": {

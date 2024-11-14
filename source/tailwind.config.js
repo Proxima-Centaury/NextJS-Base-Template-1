@@ -1,4 +1,4 @@
-const componentPicker = require("./tailwind/picker");
+const componentPicker = require("./tailwind/componentPicker");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

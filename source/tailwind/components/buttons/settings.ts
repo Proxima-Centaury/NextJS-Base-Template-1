@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 const settingsButtonComponent = (theme: any) => {
     return {
         ".settingsButton": {

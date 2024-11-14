@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 const switchComponent = (theme: any) => {
     return {
         ".switch": {
