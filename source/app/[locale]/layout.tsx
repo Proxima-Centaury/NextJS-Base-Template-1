@@ -16,13 +16,18 @@ import type { AbstractIntlMessages } from "next-intl";
 import type TLayout from ">_/types/TLayout";
 
 export async function generateMetadata(props: TLayout) {
+
     const { params } = props;
     const { locale } = params || {};
+
     const translateMetadata = await getTranslations({ locale, namespace: `00 - Metadata` });
+
     return { title: translateMetadata(`title`), description: translateMetadata(`description`) };
+
 };
 
 const RootLayout = async (props: TLayout): Promise<React.JSX.Element> => {
+
     const { children, params } = props;
     const { locale } = params || {};
 
@@ -41,6 +46,7 @@ const RootLayout = async (props: TLayout): Promise<React.JSX.Element> => {
             </Theme>
         </body>
     </html>;
+    
 };
 
 export default RootLayout;

@@ -8,6 +8,7 @@ import type { MouseEventHandler } from "react";
 import type TNavbar from ">_/types/TNavbar";
 
 const Navbar = (props: TNavbar): React.JSX.Element => {
+
     const { locale } = props;
 
     const translateAriaLabel = useTranslations(`Z8 - Aria Label`);
@@ -24,6 +25,7 @@ const Navbar = (props: TNavbar): React.JSX.Element => {
         </nav>
         <SettingsMenu expanded={ menuStates.settings.expanded } locale={ locale }/>
     </Fragment>;
+    
 };
 
 export default Navbar;

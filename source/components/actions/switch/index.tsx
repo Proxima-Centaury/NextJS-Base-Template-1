@@ -12,6 +12,7 @@ import type { TPosition, TValue } from ">_/types/TSwitch";
 import type TSwitch from ">_/types/TSwitch";
 
 const Switch = (props: TSwitch): React.JSX.Element => {
+
     const { defaultValue, disabled, icons, id, localeSwitcher, name, role, themeSwitcher, values } = props;
 
     const locale: string = useLocale();
@@ -40,6 +41,7 @@ const Switch = (props: TSwitch): React.JSX.Element => {
             { (!isObjectEmpty("icons")) ? <i className={ `fa-solid fa-${ icons[position] }` }/> : null }
         </span>
     </label>;
+    
 };
 
 export default Switch;

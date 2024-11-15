@@ -9,6 +9,7 @@ import type TSettingsMenu from ">_/types/TSettingsMenu";
 import type TSwitch from ">_/types/TSwitch";
 
 const SettingsMenu = (props: TSettingsMenu): React.JSX.Element => {
+
     const { expanded, locale } = props;
 
     const translateAriaLabel = useTranslations(`Z8 - Aria Label`);
@@ -33,15 +34,18 @@ const SettingsMenu = (props: TSettingsMenu): React.JSX.Element => {
             </Setting>
         </div>
     </nav>;
+
 };
 
 const Setting = (props: TSetting): React.JSX.Element => {
+
     const { children, label } = props;
 
     return <div className="flex justify-between items-center">
         <label>{ label } :</label>
         { children }
     </div>;
+    
 };
 
 export default SettingsMenu;
