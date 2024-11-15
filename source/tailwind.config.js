@@ -1,3 +1,5 @@
+const componentPicker = require("./tailwind/componentPicker");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
@@ -7,45 +9,10 @@ module.exports = {
     darkMode: "class",
     plugins: [
         function ({ addComponents, theme }) {
-            addComponents({
-                ".switch": {
-                    display: "flex",
-                    alignItems: "center",
-                    width: theme("width.switch"),
-                    height: theme("height.switch"),
-                    border: `${ theme("borderWidth.2") } solid ${ theme("colors.light2") }`,
-                    borderRadius: theme("borderRadius.radius10"),
-                    backgroundColor: theme("colors.light3"),
-                    transition: "border-color 0.3s ease, background-color 0.3s ease",
-                    ".dark &": {
-                        border: `${ theme("borderWidth.2") } solid ${ theme("colors.dark2") }`,
-                        backgroundColor: theme("colors.dark3")
-                    },
-                    ".checkbox": {
-                        display: "none"
-                    },
-                    ".icon": {
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        width: theme("width.switchIcon"),
-                        height: theme("height.switchIcon"),
-                        fontSize: theme("fontSize.12"),
-                        border: `${ theme("borderWidth.2") } solid ${ theme("colors.light2") }`,
-                        borderRadius: theme("borderRadius.radius10"),
-                        backgroundColor: theme("colors.light3"),
-                        transform: "translateX(-2px)",
-                        transition: "border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
-                        ".dark &": {
-                            border: `${ theme("borderWidth.2") } solid ${ theme("colors.dark2") }`,
-                            backgroundColor: theme("colors.dark3")
-                        },
-                    },
-                    "& [data-position='right']": {
-                        transform: "translateX(calc(100% - 2px))",
-                    }
-                }
-            })
+            const Switch = componentPicker(`switch`, theme);
+            const SettingsButton = componentPicker(`settingsButton`, theme);
+            const SettingsMenu = componentPicker(`settingsMenu`, theme);
+            addComponents({ ...Switch, ...SettingsButton, ...SettingsMenu });
         }
     ],
     theme: {
@@ -91,11 +58,12 @@ module.exports = {
                 information3: "#1783B4",
                 information4: "#00496B",
                 lightBlur: "#F8F8F890",
-                light1: "#F8F8F8",
-                light2: "#F0F0F0",
+                light1: "#D8D8D8",
+                light2: "#E0E0E0",
                 light3: "#E8E8E8",
-                light4: "#E0E0E0",
-                light5: "#D8D8D8",
+                light4: "#F0F0F0",
+                light5: "#F8F8F8",
+                mute: "#939393",
                 success1: "#8EFFBD",
                 success2: "#5AD88F",
                 success3: "#2BA55E",
@@ -125,6 +93,9 @@ module.exports = {
             },
             height: {
                 bar: "50px",
+                full: "100%",
+                fullViewport: "100vh",
+                settings: "250px",
                 switch: "10px",
                 switchIcon: "20px"
             },
@@ -143,6 +114,9 @@ module.exports = {
             },
             width: {
                 bar: "50px",
+                full: "100%",
+                fullViewport: "100vw",
+                settings: "250px",
                 switch: "40px",
                 switchIcon: "20px"
             }

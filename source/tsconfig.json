@@ -12,7 +12,9 @@
         "paths": {
             ">_/*": [ "./*" ],
             ">_/actions/*": [ "./components/actions/*" ],
-            ">_/helpers/*": [ "./components/helpers/*" ]
+            ">_/containers/*": [ "./components/containers/*" ],
+            ">_/helpers/*": [ "./components/helpers/*" ],
+            ">_/menus/*": [ "./components/menus/*" ]
         },
         "plugins": [ { "name": "next" } ],
         "resolveJsonModule": true,
